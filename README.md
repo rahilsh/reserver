@@ -1,6 +1,6 @@
 # Reserver
 
-It is a room reservation application build using spring-boot
+It is a room reservation application built using spring-boot
 
 ### Reference Documentation
 For further reference, please consider the following sections:
