@@ -14,9 +14,4 @@ public class ReservableRoomResponse {
   private Integer roomNumber;
   private Integer price;
   private Links links;
-
-  public ReservableRoomResponse(Integer roomNumber, Integer price) {
-    this.roomNumber = roomNumber;
-    this.price = price;
-  }
 }

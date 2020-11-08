@@ -1,11 +1,11 @@
 package in.rsh.reserver.convertor;
 
 import in.rsh.reserver.entity.Room;
+import in.rsh.reserver.model.Links;
 import in.rsh.reserver.model.Self;
+import in.rsh.reserver.model.response.ReservableRoomResponse;
 import in.rsh.reserver.rest.ResourceConstants;
 import java.util.function.Function;
-import in.rsh.reserver.model.Links;
-import in.rsh.reserver.model.response.ReservableRoomResponse;
 
 public class RoomEntityToReservableRoomResponseConverter
     implements Function<Room, ReservableRoomResponse> {
@@ -13,7 +13,9 @@ public class RoomEntityToReservableRoomResponseConverter
   @Override
   public ReservableRoomResponse apply(Room source) {
     ReservableRoomResponse reservationResponse = new ReservableRoomResponse();
-    if (null != source.getId()) reservationResponse.setId(source.getId());
+    if (null != source.getId()) {
+      reservationResponse.setId(source.getId());
+    }
     reservationResponse.setRoomNumber(source.getRoomNumber());
     reservationResponse.setPrice(Integer.valueOf(source.getPrice()));
     Links links = new Links();

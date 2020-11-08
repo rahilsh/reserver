@@ -39,7 +39,9 @@ public class Room {
   }
 
   public void addReservationEntity(Reservation reservation) {
-    if (null == reservationList) reservationList = new ArrayList<>();
+    if (null == reservationList) {
+      reservationList = new ArrayList<>();
+    }
 
     reservationList.add(reservation);
   }

@@ -12,7 +12,6 @@ public class ApiConfig {
   public ObjectMapper objectMapper() {
     ObjectMapper objectMapper = new ObjectMapper();
     objectMapper.registerModule(new JavaTimeModule());
-
     return new ObjectMapper();
   }
 

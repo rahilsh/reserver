@@ -1,16 +1,16 @@
 package in.rsh.reserver.rest;
 
+import in.rsh.reserver.convertor.RoomEntityToReservableRoomResponseConverter;
 import in.rsh.reserver.entity.Reservation;
 import in.rsh.reserver.entity.Room;
 import in.rsh.reserver.model.request.ReservationRequest;
-import in.rsh.reserver.repository.ReservationRepository;
-import java.time.LocalDate;
-import java.util.Optional;
-import in.rsh.reserver.convertor.RoomEntityToReservableRoomResponseConverter;
 import in.rsh.reserver.model.response.ReservableRoomResponse;
 import in.rsh.reserver.model.response.ReservationResponse;
 import in.rsh.reserver.repository.PageableRoomRepository;
+import in.rsh.reserver.repository.ReservationRepository;
 import in.rsh.reserver.repository.RoomRepository;
+import java.time.LocalDate;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.data.domain.Page;
@@ -72,8 +72,9 @@ public class ReservationResource {
   public ResponseEntity<Room> getRoomById(@PathVariable Long roomId) {
 
     Optional<Room> optionalRoomEntity = roomRepository.findById(roomId);
-
-    return new ResponseEntity<>(optionalRoomEntity.get(), HttpStatus.OK);
+    return optionalRoomEntity
+        .map(room -> new ResponseEntity<>(room, HttpStatus.OK))
+        .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
   }
 
   @PostMapping(

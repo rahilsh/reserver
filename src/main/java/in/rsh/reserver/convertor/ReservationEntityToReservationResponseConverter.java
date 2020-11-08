@@ -14,7 +14,9 @@ public class ReservationEntityToReservationResponseConverter
     reservationResponse.setCheckin(source.getCheckin());
     reservationResponse.setCheckout(source.getCheckout());
 
-    if (null != source.getRoom()) reservationResponse.setId(source.getRoom().getId());
+    if (null != source.getRoom()) {
+      reservationResponse.setId(source.getRoom().getId());
+    }
     return reservationResponse;
   }
 }

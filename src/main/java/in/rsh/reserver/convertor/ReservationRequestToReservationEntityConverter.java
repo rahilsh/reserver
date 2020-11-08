@@ -13,7 +13,9 @@ public class ReservationRequestToReservationEntityConverter
     Reservation reservation = new Reservation();
     reservation.setCheckin(source.getCheckin());
     reservation.setCheckout(source.getCheckout());
-    if (null != source.getId()) reservation.setId(source.getId());
+    if (null != source.getId()) {
+      reservation.setId(source.getId());
+    }
 
     return reservation;
   }

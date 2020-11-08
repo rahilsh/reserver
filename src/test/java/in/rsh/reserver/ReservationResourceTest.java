@@ -2,8 +2,8 @@ package in.rsh.reserver;
 
 import static io.restassured.RestAssured.given;
 
-import io.restassured.RestAssured;
 import in.rsh.reserver.rest.ResourceConstants;
+import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
