@@ -1,6 +1,6 @@
 # Reserver
 
-Room reservation application with all the required functionality
+Room reservation application with all the necessary functionalities
 
 ### Reference Documentation
 For further reference, please consider the following sections:
