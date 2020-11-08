@@ -1,4 +1,6 @@
-# spring-boot-angular
+# Reserver
+
+It is a room reservation application build using spring-boot
 
 ### Reference Documentation
 For further reference, please consider the following sections:
